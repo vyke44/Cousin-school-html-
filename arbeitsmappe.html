@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zürich entdecken – Arbeitsmappe Etappe 1</title>
+<style>
+  :root{
+    --ink:#1c2233; --muted:#59627a; --accent:#1d3fd8; --accent-soft:#eef1ff;
+    --line:#d5dbf5; --paper:#fff; --bg:#f3f4f8;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Georgia,"Times New Roman",serif}
+  .wrap{max-width:780px;margin:0 auto;padding:16px}
+  h1,h2,h3,.tag,.label,button{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .sheet{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:28px 30px;margin:0 0 18px}
+  .tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);padding:3px 10px;border-radius:99px}
+  h1{font-size:1.9rem;line-height:1.2;margin:10px 0 4px}
+  h2{font-size:1.35rem;margin:10px 0 6px}
+  h3{font-size:1rem;margin:18px 0 4px;color:var(--accent)}
+  p{margin:6px 0}
+  .lead{color:var(--muted)}
+  .note{border-left:4px solid var(--accent);background:var(--accent-soft);padding:10px 14px;border-radius:0 8px 8px 0;font-family:system-ui,sans-serif;font-size:.92rem;margin:14px 0}
+  .meta{display:flex;gap:24px;flex-wrap:wrap;font-family:system-ui,sans-serif;font-size:.95rem;margin-top:14px}
+  .meta span{border-bottom:2px solid var(--ink);min-width:200px;display:inline-block;height:1.5em}
+  ul{margin:6px 0 6px 1.2em;padding:0}
+  li{margin:3px 0}
+  .blank{border-bottom:1.5px solid var(--ink);height:2em;margin:4px 0}
+  .box{border:1.5px solid var(--ink);border-radius:8px;min-height:9em;margin-top:8px}
+  figure{margin:12px 0}
+  figcaption{font-family:system-ui,sans-serif;font-size:.85rem;color:var(--muted);margin-top:6px}
+  svg{width:100%;height:auto;display:block;border:1.5px solid var(--ink);border-radius:8px;background:#fff}
+  .toolbar{position:sticky;top:0;background:var(--bg);padding:10px 0;display:flex;gap:10px;align-items:center;font-family:system-ui,sans-serif;font-size:.9rem;z-index:2}
+  button{font-weight:700;border:0;background:var(--accent);color:#fff;padding:10px 16px;border-radius:10px;cursor:pointer;min-height:44px}
+  @media print{
+    body{background:#fff;font-size:12pt}
+    .wrap{max-width:none;padding:0}
+    .toolbar{display:none}
+    .sheet{border:0;border-radius:0;padding:0;margin:0;break-after:page}
+    .sheet:last-child{break-after:auto}
+  }
+  @media (max-width:560px){.sheet{padding:20px 16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="toolbar">
+    <button onclick="window.print()">Drucken / als PDF speichern</button>
+    <span>Entwürfe zum Anpassen – bitte in eigene Worte fassen.</span>
+  </div>
+
+  <!-- Deckblatt -->
+  <section class="sheet">
+    <span class="tag">Etappe 1 · Unsere Idee</span>
+    <h1>Zürich entdecken mit HTML und KI</h1>
+    <p class="lead">Projektskizze für einen digitalen Stadtführer</p>
+    <div class="meta"><div>Name: <span></span></div><div>Datum: <span></span></div></div>
+    <div class="note">
+      <b>Wichtig:</b> Das sind Entwürfe als Starthilfe. Lies jeden Abschnitt, ändere ihn so, dass er zu deinen eigenen Gedanken passt, und
+      sei bereit, deine Entscheidungen im Leistungssnack (LS1) zu erklären. Die Reflexion (R1a/R1b) und die Selbstkontrolle (Q1) füllst du selbst aus.
+    </div>
+    <h3>Inhalt</h3>
+    <ul>
+      <li>Entwicklungsprotokoll (A0.2a / A0.2b)</li>
+      <li>A1 · Zielgruppe und Nutzen</li>
+      <li>A2 · Erste Version und spätere Erweiterungen</li>
+      <li>A3a · Projektskizze</li>
+      <li>A3b · So soll unsere Seite genutzt werden</li>
+      <li>A4 · Abschluss-Check</li>
+      <li>Vorbereitung auf den Leistungssnack (LS1)</li>
+    </ul>
+  </section>
+
+  <!-- Protokoll -->
+  <section class="sheet">
+    <span class="tag">A0.2a / A0.2b</span>
+    <h1>Unser Entwicklungsprotokoll</h1>
+    <h3>1 · Unsere ersten Ideen</h3>
+    <ul>
+      <li>Eine Seite mit den wichtigsten Orten in Zürich (z. B. Altstadt, See, Uetliberg) und kurzen Beschreibungen.</li>
+      <li>Eine Seite mit Tipps für Essen, Eis und Cafés.</li>
+      <li>Eine Seite mit Tram- und Busverbindungen zu den Orten.</li>
+    </ul>
+    <p class="lead">Nützlich: Orte mit Beschreibung helfen sofort beim Auswählen; Tipps und Verbindungen wären gut, brauchen aber mehr Arbeit.</p>
+    <h3>2 · Unser Austausch</h3>
+    <p>Für die Orte-Seite spricht, dass sie einfach ist und die Jugendlichen direkt entscheiden können, was sie sehen wollen.
+       Dagegen spricht, dass noch keine Wegbeschreibung enthalten ist. Einig waren wir uns, dass wir klein anfangen.
+       Offen blieb, ob wir später Tram-Infos ergänzen.</p>
+    <h3>3 · Unsere Entscheidung</h3>
+    <p>Wir setzen zuerst die Seite mit ausgewählten Orten und kurzen Beschreibungen um, weil sie für eine erste Version klar und gut testbar ist.
+       Nächster Schritt: Wir legen fest, welche Orte darauf erscheinen.</p>
+    <h3>4 · Ausprobiert und weiterentwickelt</h3>
+    <p class="lead">Wird später nach dem Test ergänzt.</p>
+    <div class="blank"></div><div class="blank"></div>
+  </section>
+
+  <!-- A1 -->
+  <section class="sheet">
+    <span class="tag">A1</span>
+    <h1>Zielgruppe und Nutzen</h1>
+    <h3>1 · Für wen entwickeln wir die Seite?</h3>
+    <p>Unsere Seite richtet sich an Jugendliche zwischen 13 und 16 Jahren, die Zürich zum ersten Mal besuchen, zum Beispiel bei einer Klassenfahrt
+       oder einem Ausflug mit Freunden. Sie interessieren sich für Orte, an denen man etwas erleben kann: Aussichtspunkte, den See, Freizeit und Essen.
+       Sie kennen die Stadt noch nicht und haben meist nur wenige Stunden Zeit. Wir haben diese Zielgruppe gewählt, weil man sie klar beschreiben kann
+       und weil wir gut einschätzen können, was sie braucht.</p>
+    <h3>2 · Wobei soll unsere Seite helfen?</h3>
+    <p>Sie hilft dabei, aus vielen Möglichkeiten passende Ausflugsziele auszuwählen. Die Jugendlichen sehen auf einen Blick, was es gibt und was an
+       jedem Ort interessant ist. So können sie in kurzer Zeit entscheiden, welche Orte sie kennenlernen möchten, und ihren Besuch selbst planen.</p>
+  </section>
+
+  <!-- A2 -->
+  <section class="sheet">
+    <span class="tag">A2</span>
+    <h1>Erste Version und spätere Erweiterungen</h1>
+    <h3>1 · Das soll unsere erste Version können</h3>
+    <ul>
+      <li><b>Orte übersichtlich anzeigen:</b> Jeder Ort bekommt eine eigene Karte mit Namen.</li>
+      <li><b>Kurze Beschreibung:</b> Ein bis zwei Sätze erklären, was dort interessant ist.</li>
+    </ul>
+    <p>Mit diesen zwei Funktionen können die Jugendlichen sofort auswählen, was sie sehen möchten. Mehr brauchen sie für den Anfang nicht, und wir können die Seite leicht testen.</p>
+    <h3>2 · Diese Ideen heben wir für später auf</h3>
+    <ul>
+      <li><b>Filter</b> (z. B. „draußen“, „Essen“, „kostenlos“): sinnvoll erst, wenn es viele Orte gibt.</li>
+      <li><b>Suche:</b> bei wenigen Orten nicht nötig.</li>
+      <li><b>Karte mit Wegen und Tram-Linien:</b> hilfreich, aber aufwendiger; wir testen zuerst, ob die Orte-Liste ausreicht.</li>
+      <li><b>Bilder:</b> verbessern das Aussehen, aber der Nutzen entsteht zuerst durch die Informationen.</li>
+    </ul>
+  </section>
+
+  <!-- A3a -->
+  <section class="sheet">
+    <span class="tag">A3a</span>
+    <h1>Unsere Projektskizze</h1>
+    <p class="lead">So könnte unsere Seite aussehen (Beispielorte: Grossmünster, Seepromenade, Uetliberg).</p>
+    <figure>
+      <svg viewBox="0 0 640 560" role="img" aria-label="Skizze der Seite Zürich entdecken mit Titel, Einführung und drei Ortskarten">
+        <g font-family="system-ui, sans-serif" fill="#1c2233">
+          <rect x="0" y="0" width="640" height="34" fill="#eef1ff"/>
+          <circle cx="18" cy="17" r="5" fill="none" stroke="#1c2233"/><circle cx="36" cy="17" r="5" fill="none" stroke="#1c2233"/><circle cx="54" cy="17" r="5" fill="none" stroke="#1c2233"/>
+          <text x="320" y="82" font-size="34" font-weight="800" text-anchor="middle">Zürich entdecken</text>
+          <text x="320" y="110" font-size="15" text-anchor="middle">Hier findest du Ideen für deinen Besuch.</text>
+          <text x="470" y="62" font-size="12" fill="#1d3fd8">← Titel</text>
+          <text x="500" y="108" font-size="12" fill="#1d3fd8">← Kurze Einführung</text>
+
+          <rect x="40" y="136" width="560" height="104" rx="10" fill="#fff" stroke="#1c2233" stroke-width="2"/>
+          <rect x="54" y="150" width="76" height="76" rx="6" fill="#eef1ff" stroke="#1c2233" stroke-dasharray="4 3"/>
+          <text x="92" y="193" font-size="11" text-anchor="middle">Bild (später)</text>
+          <text x="146" y="172" font-size="20" font-weight="800">Grossmünster</text>
+          <text x="146" y="198" font-size="14">Wahrzeichen der Altstadt. Vom Turm sieht</text>
+          <text x="146" y="218" font-size="14">man über die Dächer von Zürich.</text>
+
+          <rect x="40" y="254" width="560" height="104" rx="10" fill="#fff" stroke="#1c2233" stroke-width="2"/>
+          <rect x="54" y="268" width="76" height="76" rx="6" fill="#eef1ff" stroke="#1c2233" stroke-dasharray="4 3"/>
+          <text x="92" y="311" font-size="11" text-anchor="middle">Bild (später)</text>
+          <text x="146" y="290" font-size="20" font-weight="800">Seepromenade</text>
+          <text x="146" y="316" font-size="14">Zum Entspannen am Wasser, mit Wiesen</text>
+          <text x="146" y="336" font-size="14">und Badestellen im Sommer.</text>
+
+          <rect x="40" y="372" width="560" height="104" rx="10" fill="#fff" stroke="#1c2233" stroke-width="2"/>
+          <rect x="54" y="386" width="76" height="76" rx="6" fill="#eef1ff" stroke="#1c2233" stroke-dasharray="4 3"/>
+          <text x="92" y="429" font-size="11" text-anchor="middle">Bild (später)</text>
+          <text x="146" y="408" font-size="20" font-weight="800">Uetliberg</text>
+          <text x="146" y="434" font-size="14">Zürichs Hausberg mit Aussicht auf Stadt</text>
+          <text x="146" y="454" font-size="14">und See. Gut für einen Spaziergang.</text>
+          <text x="470" y="296" font-size="12" fill="#1d3fd8"></text>
+          <text x="40" y="505" font-size="12" fill="#1d3fd8">↑ Informationen zu Orten: Name + kurzer Text</text>
+
+          <rect x="220" y="516" width="200" height="30" rx="15" fill="none" stroke="#1c2233" stroke-dasharray="5 4"/>
+          <text x="320" y="536" font-size="13" text-anchor="middle">[später: Filter / mehr Orte]</text>
+        </g>
+      </svg>
+      <figcaption>Gestrichelte Elemente sind geplante Erweiterungen und gehören nicht zur ersten Version.</figcaption>
+    </figure>
+  </section>
+
+  <!-- A3b -->
+  <section class="sheet">
+    <span class="tag">A3b</span>
+    <h1>So soll unsere Seite genutzt werden</h1>
+    <h3>1 · So findet man sich auf unserer Seite zurecht</h3>
+    <p>Als Erstes sieht man oben den Titel „Zürich entdecken“ und den Satz, der erklärt, wofür die Seite da ist. Darunter stehen die Orte untereinander als Karten.
+       Man liest von oben nach unten, schaut sich den Namen und den kurzen Text an und merkt sich, welche Orte einen interessieren.
+       Alles Nötige steht auf einer Seite, sodass man nirgends suchen muss.</p>
+    <h3>2 · Deshalb haben wir den Aufbau so gewählt</h3>
+    <p><b>Wir platzieren den Titel und die Einführung ganz oben,</b> damit sofort klar ist, worum es geht und wem die Seite hilft.</p>
+    <p><b>Wir setzen jeden Ort in eine eigene Karte mit kurzem Text,</b> damit die Jugendlichen die Orte schnell vergleichen und in kurzer Zeit auswählen können.</p>
+  </section>
+
+  <!-- A4 -->
+  <section class="sheet">
+    <span class="tag">A4</span>
+    <h1>Abschluss-Check</h1>
+    <h3>1 · Prüfe deine Unterlagen</h3>
+    <ul style="list-style:none;margin-left:0">
+      <li>☐ Für wen die Seite gedacht ist und wobei sie helfen soll.</li>
+      <li>☐ Welche ein bis zwei Funktionen wir zuerst planen.</li>
+      <li>☐ Welche Ideen wir für später aufheben.</li>
+      <li>☐ Wie der Aufbau der Skizze zur Zielgruppe passt.</li>
+    </ul>
+    <h3>2 · Zeige, warum deine Skizze passt</h3>
+    <p>Die Ortskarten in A3a helfen der Zielgruppe, weil die Jugendlichen jeden Ort mit Namen und kurzem Text auf einen Blick verstehen. Sie müssen nicht lange lesen
+       und können schnell entscheiden, ob sie dorthin möchten.</p>
+    <h3>3 · Prüfe eine mögliche Verbesserung</h3>
+    <p>Wir könnten bei jeder Karte eine Angabe wie „draußen“ oder „drinnen“ ergänzen, damit man bei schlechtem Wetter schneller passende Orte findet.
+       Das heben wir für später auf, weil die erste Version zuerst einfach bleiben soll.</p>
+  </section>
+
+  <!-- LS1 -->
+  <section class="sheet">
+    <span class="tag">LS1</span>
+    <h1>Vorbereitung auf den Leistungssnack</h1>
+    <p class="lead">3–5 Minuten Gespräch mit dem Lernbegleiter. Merke dir die Kernpunkte und zeige die passenden Stellen in deinen Unterlagen.</p>
+    <ul>
+      <li><b>Für wen, wozu?</b> Jugendliche (13–16), die Zürich zum ersten Mal besuchen; die Seite hilft, passende Ausflugsziele auszuwählen (A1).</li>
+      <li><b>Erste Funktionen?</b> Orte als Karten anzeigen und kurz beschreiben, weil man damit sofort entscheiden kann (A2).</li>
+      <li><b>Wie entstand die Entscheidung?</b> Wir haben mehrere Ideen gesammelt (Orte, Essenstipps, Verbindungen), besprochen und uns für die einfachste mit dem größten Nutzen entschieden (Protokoll).</li>
+      <li><b>Welche andere Möglichkeit hast du abgewogen?</b> Eine Karte mit Tram-Verbindungen; sie wäre nützlich, ist aber für den Anfang zu aufwendig.</li>
+    </ul>
+    <div class="note">Nicht in dieser Mappe, weil sie persönlich sind: <b>Q1</b> (Selbstkontrolle, siehe <code>index.html</code>) und <b>R1a/R1b</b> (Reflexion). Schreibe sie selbst, ehrlich und mit konkreten Beispielen aus deiner Arbeit.</div>
+  </section>
+</div>
+</body>
+</html>
