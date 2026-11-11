@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zürich entdecken</title>
+<meta name="description" content="Ideen für deinen ersten Besuch in Zürich – ausgewählte Orte mit kurzen Beschreibungen.">
+<style>
+  :root{
+    --ink:#1b2236; --muted:#566079; --accent:#1d4ed8; --accent-soft:#e8eefc;
+    --bg:#f6f7fb; --card:#ffffff; --line:#d9deec;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  header{background:var(--accent);color:#fff;padding:48px 20px 40px;text-align:center}
+  header h1{margin:0 0 8px;font-size:clamp(2rem,6vw,3rem);line-height:1.15}
+  header p{margin:0 auto;max-width:34em;font-size:1.1rem;opacity:.95}
+  main{max-width:900px;margin:0 auto;padding:28px 16px 48px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;list-style:none;margin:0;padding:0}
+  .ort{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .ort h2{margin:0 0 4px;font-size:1.25rem}
+  .art{display:inline-block;font-size:.8rem;font-weight:700;color:var(--accent);background:var(--accent-soft);padding:2px 10px;border-radius:99px;margin-bottom:8px}
+  .ort p{margin:6px 0 0;color:var(--muted)}
+  footer{text-align:center;color:var(--muted);font-size:.9rem;padding:0 16px 32px}
+</style>
+</head>
+<body>
+  <header>
+    <h1>Zürich entdecken</h1>
+    <p>Hier findest du Ideen für deinen Besuch. Schau dir die Orte an und entscheide, welche du kennenlernen möchtest.</p>
+  </header>
+
+  <main>
+    <ul class="grid">
+      <li class="ort">
+        <span class="art">Altstadt</span>
+        <h2>Grossmünster</h2>
+        <p>Das Wahrzeichen von Zürich. Von den Türmen aus siehst du über die Dächer der Altstadt.</p>
+      </li>
+      <li class="ort">
+        <span class="art">Am Wasser</span>
+        <h2>Seepromenade</h2>
+        <p>Zum Entspannen am Zürichsee, mit Wiesen und Badestellen im Sommer.</p>
+      </li>
+      <li class="ort">
+        <span class="art">Aussicht</span>
+        <h2>Uetliberg</h2>
+        <p>Zürichs Hausberg. Oben hast du einen weiten Blick über Stadt und See.</p>
+      </li>
+      <li class="ort">
+        <span class="art">Altstadt</span>
+        <h2>Lindenhof</h2>
+        <p>Ein ruhiger Platz mitten in der Altstadt mit schöner Aussicht auf Limmat und Rathaus.</p>
+      </li>
+      <li class="ort">
+        <span class="art">Shoppen &amp; Bummeln</span>
+        <h2>Bahnhofstrasse</h2>
+        <p>Die bekannteste Einkaufsstrasse der Stadt, gut zum Bummeln und Leute beobachten.</p>
+      </li>
+      <li class="ort">
+        <span class="art">Am Wasser</span>
+        <h2>Limmat</h2>
+        <p>Der Fluss mitten durch die Stadt. Im Sommer sitzen viele am Ufer oder gehen baden.</p>
+      </li>
+    </ul>
+  </main>
+
+  <footer>Schulprojekt „Zürich entdecken mit HTML und KI“ · Etappe 1</footer>
+</body>
+</html>
