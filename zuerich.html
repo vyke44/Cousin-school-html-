@@ -1,132 +1,129 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Zürich entdecken · Sehenswürdigkeiten für alle Altersgruppen</title>
-<meta name="description" content="Sehenswürdigkeiten in Zürich für Familien, Jugendliche, Erwachsene und Senioren, mit kurzen Beschreibungen.">
+<title>Zürich entdecken</title>
+<meta name="description" content="Sehenswürdigkeiten in Zürich für Familien, Jugendliche, Erwachsene und Senioren. Sights in Zürich for families, teenagers, adults and seniors.">
 <style>
-  :root{
-    --ink:#1b2236; --muted:#4a5470; --accent:#1d4ed8; --accent-ink:#fff;
-    --bg:#f6f7fb; --card:#ffffff; --band:#e8eefc;
-  }
+  :root{--ink:#1b2236;--muted:#4a5470;--accent:#1d4ed8;--on:#fff;--bg:#f6f7fb;--card:#fff;--band:#e8eefc}
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-  a{color:inherit}
-  header{background:var(--accent);color:var(--accent-ink);padding:56px 20px 44px}
-  .in{max-width:960px;margin:0 auto}
+  html[data-lang="de"] body [lang="en"], html[data-lang="en"] body [lang="de"]{display:none}
+  a{color:var(--accent)}
+  header{background:var(--accent);color:var(--on);padding:28px 20px 44px}
+  .in{max-width:980px;margin:0 auto}
+  .top{display:flex;justify-content:flex-end;margin-bottom:18px}
+  .langs{display:flex;gap:8px}
+  .langs button{font:inherit;font-weight:700;min-height:44px;min-width:56px;border-radius:99px;border:2px solid var(--on);background:transparent;color:var(--on);cursor:pointer}
+  .langs button[aria-pressed="true"]{background:var(--on);color:var(--accent)}
   header h1{margin:0 0 12px;font-size:clamp(2.2rem,7vw,3.6rem);line-height:1.1}
   header p{margin:0;max-width:36em;font-size:1.15rem}
   nav{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
-  nav a{background:var(--accent-ink);color:var(--accent);font-weight:700;text-decoration:none;padding:10px 18px;border-radius:99px;min-height:44px;display:inline-flex;align-items:center}
-  nav a:focus-visible,nav a:hover{background:var(--band)}
-  main{padding:8px 16px 40px}
-  section{max-width:960px;margin:0 auto;padding:44px 0 8px}
-  section h2{margin:0 0 4px;font-size:clamp(1.6rem,4.5vw,2.2rem);line-height:1.2}
-  section > p{margin:0 0 20px;color:var(--muted);max-width:40em}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;list-style:none;margin:0;padding:0}
-  .ort{background:var(--card);border-radius:14px;padding:22px}
+  nav a{background:var(--on);color:var(--accent);font-weight:700;text-decoration:none;padding:10px 18px;border-radius:99px;min-height:44px;display:inline-flex;align-items:center}
+  nav a:hover,nav a:focus-visible{background:var(--band)}
+  main{padding:8px 16px 32px}
+  section{max-width:980px;margin:0 auto;padding:44px 0 8px}
+  h2{margin:0 0 4px;font-size:clamp(1.6rem,4.5vw,2.2rem);line-height:1.2}
+  .intro{margin:0 0 20px;color:var(--muted);max-width:40em}
+  .grid{align-items:start;display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;list-style:none;margin:0;padding:0}
+  .ort{background:var(--card);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .ort figure{margin:0}
+  .ort img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;background:var(--band)}
+  .ort figcaption{font-size:.8rem;color:var(--muted);padding:6px 14px 0}
+  .txt{padding:16px 20px 22px}
   .ort h3{margin:0 0 6px;font-size:1.25rem}
-  .ort p{margin:0;color:var(--ink)}
+  .ort p{margin:0}
   .ort .wo{margin-top:10px;color:var(--muted);font-size:.95rem}
-  .hinweis{max-width:960px;margin:24px auto 0;background:var(--band);border-radius:14px;padding:16px 20px}
-  footer{text-align:center;color:var(--muted);font-size:.95rem;padding:0 16px 36px}
+  .hinweis{max-width:980px;margin:24px auto 0;background:var(--band);border-radius:14px;padding:16px 20px}
+  .legal{max-width:760px}
+  .legal h2{font-size:1.5rem}
+  .legal h3{margin:22px 0 4px;font-size:1.1rem}
+  .legal p,.legal li{margin:6px 0}
+  .legal ul{padding-left:1.2em}
+  mark{background:#fff3b0;padding:0 4px;border-radius:4px}
+  footer{max-width:980px;margin:0 auto;padding:24px 16px 40px;color:var(--muted);font-size:.95rem}
+  footer a{margin-right:16px}
 </style>
 </head>
 <body>
-  <header>
-    <div class="in">
-      <h1>Zürich entdecken</h1>
-      <p>Sehenswürdigkeiten für jedes Alter: Hier findest du Ideen für Familien, Jugendliche, Erwachsene und Senioren. Such dir die Orte aus, die zu deiner Gruppe passen.</p>
-      <nav aria-label="Zielgruppen">
-        <a href="#familien">Familien mit Kindern</a>
-        <a href="#jugendliche">Jugendliche</a>
-        <a href="#erwachsene">Erwachsene und Senioren</a>
-      </nav>
+<header>
+  <div class="in">
+    <div class="top"><div class="langs" role="group" aria-label="Sprache / Language">
+      <button type="button" data-set="de" aria-pressed="true">DE</button>
+      <button type="button" data-set="en" aria-pressed="false">EN</button>
+    </div></div>
+    <h1><span lang="de">Zürich entdecken</span><span lang="en">Discover Zürich</span></h1>
+    <p><span lang="de">Sehenswürdigkeiten für jedes Alter: Hier findest du Ideen für Familien, Jugendliche, Erwachsene und Senioren. Such dir die Orte aus, die zu deiner Gruppe passen.</span>
+       <span lang="en">Sights for every age: here you will find ideas for families, teenagers, adults and seniors. Pick the places that suit your group.</span></p>
+    <nav aria-label="Zielgruppen / Groups">
+      <a href="#familien"><span lang="de">Familien mit Kindern</span><span lang="en">Families with children</span></a>
+      <a href="#jugendliche"><span lang="de">Jugendliche</span><span lang="en">Teenagers</span></a>
+      <a href="#erwachsene"><span lang="de">Erwachsene und Senioren</span><span lang="en">Adults and seniors</span></a>
+    </nav>
+  </div>
+</header>
+<main>
+<section id="familien"><h2><span lang="de">Familien mit Kindern</span><span lang="en">Families with children</span></h2><p class="intro"><span lang="de">Orte, an denen Kinder Tiere, Natur und Schiffe erleben und Eltern entspannt mitgehen können.</span><span lang="en">Places where children can see animals, nature and boats, and where parents can relax.</span></p><ul class="grid"><li class="ort"><figure><img src="fotos/zoo.jpg" loading="lazy" alt="Das Dach der Masoala-Halle im Zoo Zürich" data-alt-de="Das Dach der Masoala-Halle im Zoo Zürich" data-alt-en="The roof of the Masoala Hall at Zoo Zürich"><figcaption><span lang="de">Foto: </span><span lang="en">Photo: </span>Roland zh, <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de" rel="noopener">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Zürich_-_Zoo_-_Masoala_Halle_IMG_5821.JPG" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="txt"><h3><span lang="de">Zoo Zürich</span><span lang="en">Zoo Zürich</span></h3><p><span lang="de">Viele Tiere aus aller Welt. In der Masoala-Regenhalle läuft man durch einen echten Regenwald.</span><span lang="en">Many animals from around the world. In the Masoala Rainforest Hall you walk through a real rainforest.</span></p><p class="wo"><span lang="de">Am Zürichberg, mit dem Tram erreichbar.</span><span lang="en">On the Zürichberg, reachable by tram.</span></p></div></li><li class="ort"><div class="txt"><h3><span lang="de">Schifffahrt auf dem Zürichsee</span><span lang="en">Boat trip on Lake Zürich</span></h3><p><span lang="de">Eine Rundfahrt zeigt die Stadt und die Berge vom Wasser aus. Für Kinder ist das ein Erlebnis.</span><span lang="en">A round trip shows the city and the mountains from the water. Children love it.</span></p><p class="wo"><span lang="de">Abfahrt am Bürkliplatz.</span><span lang="en">Departs from Bürkliplatz.</span></p></div></li><li class="ort"><figure><img src="fotos/uetliberg.jpg" loading="lazy" alt="Panorama vom Uetliberg über Zürich" data-alt-de="Panorama vom Uetliberg über Zürich" data-alt-en="Panorama from the Uetliberg over Zürich"><figcaption><span lang="de">Foto: </span><span lang="en">Photo: </span>Heni2000, <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de" rel="noopener">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Zürich_Panorama_vom_Uetliberg.jpg" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="txt"><h3><span lang="de">Uetliberg und Planetenweg</span><span lang="en">Uetliberg and Planet Trail</span></h3><p><span lang="de">Ein Spaziergang auf dem Hausberg. Auf dem Planetenweg lernen Kinder die Größe unseres Sonnensystems kennen.</span><span lang="en">A walk on Zürich&#x27;s local mountain. On the Planet Trail children learn how big our solar system is.</span></p><p class="wo"><span lang="de">Mit der S-Bahn bis Uetliberg.</span><span lang="en">By S-Bahn to Uetliberg.</span></p></div></li><li class="ort"><figure><img src="fotos/botanischer.jpg" loading="lazy" alt="Eine Amsel im Botanischen Garten Zürich" data-alt-de="Eine Amsel im Botanischen Garten Zürich" data-alt-en="A blackbird in the Botanical Garden Zürich"><figcaption><span lang="de">Foto: </span><span lang="en">Photo: </span>Arkelin, <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="noopener">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Botanischer_Garten_Zürich_2025_A_04.jpg" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="txt"><h3><span lang="de">Botanischer Garten</span><span lang="en">Botanical Garden</span></h3><p><span lang="de">Ein großer Garten mit Pflanzen aus vielen Ländern, mit Wiesen zum Spielen und Ausruhen. Der Eintritt ist frei.</span><span lang="en">A big garden with plants from many countries, with lawns for playing and resting. Admission is free.</span></p><p class="wo"><span lang="de">Im Stadtteil Hottingen.</span><span lang="en">In the Hottingen district.</span></p></div></li></ul></section>
+<section id="jugendliche"><h2><span lang="de">Jugendliche</span><span lang="en">Teenagers</span></h2><p class="intro"><span lang="de">Orte zum Ausprobieren, Treffen und Abhängen mit Freunden.</span><span lang="en">Places to try things out and meet friends.</span></p><ul class="grid"><li class="ort"><div class="txt"><h3><span lang="de">FIFA World Football Museum</span><span lang="en">FIFA World Football Museum</span></h3><p><span lang="de">Ein Museum rund um Fußball mit Pokalen, Trikots und Mitmach-Stationen.</span><span lang="en">A museum about football with trophies, shirts and hands-on stations.</span></p><p class="wo"><span lang="de">Im Stadtteil Enge, nahe dem Bahnhof Enge.</span><span lang="en">In the Enge district, near Enge station.</span></p></div></li><li class="ort"><figure><img src="fotos/letten.jpg" loading="lazy" alt="Das Flussbad Oberer Letten an der Limmat" data-alt-de="Das Flussbad Oberer Letten an der Limmat" data-alt-en="The Oberer Letten river baths on the Limmat"><figcaption><span lang="de">Foto: </span><span lang="en">Photo: </span>Paebi, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="noopener">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Zürich_Flussbad_Oberer_Letten.jpg" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="txt"><h3><span lang="de">Flussbad Oberer Letten</span><span lang="en">Oberer Letten river baths</span></h3><p><span lang="de">Im Sommer baden und chillen direkt an der Limmat, mitten in der Stadt.</span><span lang="en">In summer you can swim and relax right on the Limmat, in the middle of the city.</span></p><p class="wo"><span lang="de">Beim Platzspitz, nahe dem Hauptbahnhof.</span><span lang="en">By the Platzspitz, near the main station.</span></p></div></li><li class="ort"><figure><img src="fotos/freitag.jpg" loading="lazy" alt="Gestapelte Container mit dem Schriftzug Zürich" data-alt-de="Gestapelte Container mit dem Schriftzug Zürich" data-alt-en="Stacked containers with the word Zürich"><figcaption><span lang="de">Foto: </span><span lang="en">Photo: </span>Daniel Lobo, <a href="https://creativecommons.org/licenses/by/2.0/deed.de" rel="noopener">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:FREITAG_SHOP_ZÜRICH_(3755596568).jpg" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="txt"><h3><span lang="de">Freitag Flagship Store</span><span lang="en">Freitag Flagship Store</span></h3><p><span lang="de">Ein Turm aus gestapelten Frachtcontainern, in dem Taschen aus gebrauchten Lastwagenplanen verkauft werden.</span><span lang="en">A tower of stacked freight containers where bags made from used truck tarpaulins are sold.</span></p><p class="wo"><span lang="de">In Zürich West.</span><span lang="en">In Zürich West.</span></p></div></li><li class="ort"><div class="txt"><h3><span lang="de">Bahnhofstrasse</span><span lang="en">Bahnhofstrasse</span></h3><p><span lang="de">Die bekannteste Einkaufsstraße der Stadt. Gut zum Bummeln und Leute beobachten.</span><span lang="en">The best-known shopping street in the city. Good for strolling and people-watching.</span></p><p class="wo"><span lang="de">Vom Hauptbahnhof bis zum Bürkliplatz.</span><span lang="en">From the main station to Bürkliplatz.</span></p></div></li></ul></section>
+<section id="erwachsene"><h2><span lang="de">Erwachsene und Senioren</span><span lang="en">Adults and seniors</span></h2><p class="intro"><span lang="de">Kultur, Geschichte und ruhige Wege, auch für alle, die lieber ohne lange Strecken unterwegs sind.</span><span lang="en">Culture, history and quiet paths, also for anyone who prefers short distances.</span></p><ul class="grid"><li class="ort"><figure><img src="fotos/grossmuenster.jpg" loading="lazy" alt="Blick über die Limmat auf Fraumünster und Grossmünster" data-alt-de="Blick über die Limmat auf Fraumünster und Grossmünster" data-alt-en="View across the Limmat to the Fraumünster and Grossmünster"><figcaption><span lang="de">Foto: </span><span lang="en">Photo: </span>Daniel Kraft, <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de" rel="noopener">CC BY-SA 3.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Zürich_view_Quaibrücke_20200702.jpg" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="txt"><h3><span lang="de">Grossmünster</span><span lang="en">Grossmünster</span></h3><p><span lang="de">Das Wahrzeichen der Altstadt. Von den Türmen aus siehst du über die Dächer der Stadt.</span><span lang="en">The landmark of the old town. From the towers you can see over the city&#x27;s rooftops.</span></p><p class="wo"><span lang="de">Am Limmatufer in der Altstadt.</span><span lang="en">On the Limmat in the old town.</span></p></div></li><li class="ort"><div class="txt"><h3><span lang="de">Fraumünster</span><span lang="en">Fraumünster</span></h3><p><span lang="de">Die Kirche ist bekannt für ihre farbigen Kirchenfenster von Marc Chagall.</span><span lang="en">The church is known for its colourful stained-glass windows by Marc Chagall.</span></p><p class="wo"><span lang="de">In der Altstadt, am Münsterhof.</span><span lang="en">In the old town, at the Münsterhof.</span></p></div></li><li class="ort"><figure><img src="fotos/kunsthaus.jpg" loading="lazy" alt="Fassade des Kunsthaus Zürich" data-alt-de="Fassade des Kunsthaus Zürich" data-alt-en="Façade of the Kunsthaus Zürich"><figcaption><span lang="de">Foto: </span><span lang="en">Photo: </span>Armineaghayan, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="noopener">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Kunsthaus_Zürich_by_ArmAg.jpg" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="txt"><h3><span lang="de">Kunsthaus Zürich</span><span lang="en">Kunsthaus Zürich</span></h3><p><span lang="de">Eines der großen Kunstmuseen der Schweiz mit Werken vom Mittelalter bis zur Gegenwart.</span><span lang="en">One of Switzerland&#x27;s major art museums, with works from the Middle Ages to today.</span></p><p class="wo"><span lang="de">Am Heimplatz.</span><span lang="en">At Heimplatz.</span></p></div></li><li class="ort"><figure><img src="fotos/landesmuseum.jpg" loading="lazy" alt="Das Landesmuseum Zürich" data-alt-de="Das Landesmuseum Zürich" data-alt-en="The Swiss National Museum in Zürich"><figcaption><span lang="de">Foto: </span><span lang="en">Photo: </span>Burkhard Mücke, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="noopener">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Landesmuseum_Zürich,_2017.jpg" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="txt"><h3><span lang="de">Landesmuseum Zürich</span><span lang="en">Swiss National Museum</span></h3><p><span lang="de">Das Museum erzählt die Geschichte der Schweiz in einem Gebäude, das wie ein Schloss aussieht.</span><span lang="en">The museum tells the history of Switzerland in a building that looks like a castle.</span></p><p class="wo"><span lang="de">Direkt neben dem Hauptbahnhof.</span><span lang="en">Right next to the main station.</span></p></div></li><li class="ort"><figure><img src="fotos/lindenhof.jpg" loading="lazy" alt="Der Lindenhof mit Bäumen und Bank" data-alt-de="Der Lindenhof mit Bäumen und Bank" data-alt-en="The Lindenhof with trees and a bench"><figcaption><span lang="de">Foto: </span><span lang="en">Photo: </span>Jakub Hałun, <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="noopener">CC BY 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Lindenhof_Hill,_Zurich,_20250330_1227_7917.jpg" rel="noopener">Wikimedia Commons</a></figcaption></figure><div class="txt"><h3><span lang="de">Lindenhof</span><span lang="en">Lindenhof</span></h3><p><span lang="de">Ein ruhiger Platz mit Bänken und Aussicht auf die Limmat und die Altstadt.</span><span lang="en">A quiet square with benches and a view of the Limmat and the old town.</span></p><p class="wo"><span lang="de">Oberhalb der Altstadt.</span><span lang="en">Above the old town.</span></p></div></li><li class="ort"><div class="txt"><h3><span lang="de">Seepromenade</span><span lang="en">Lakeside promenade</span></h3><p><span lang="de">Ein flacher Spazierweg am Zürichsee mit Bänken, Wiesen und viel Platz zum Ausruhen.</span><span lang="en">A flat walk along Lake Zürich with benches, lawns and plenty of room to rest.</span></p><p class="wo"><span lang="de">Zwischen Bürkliplatz und Zürichhorn.</span><span lang="en">Between Bürkliplatz and Zürichhorn.</span></p></div></li></ul></section>
+
+  <p class="hinweis"><span lang="de">Tipp: Öffnungszeiten und Preise ändern sich. Schau vor dem Besuch auf der Website des Ortes nach.</span>
+    <span lang="en">Tip: Opening times and prices change. Check the website of the place before you go.</span></p>
+
+  <section id="bildnachweis" class="legal">
+    <h2><span lang="de">Bildnachweis</span><span lang="en">Image credits</span></h2>
+    <p><span lang="de">Alle Fotos stammen von Wikimedia Commons und stehen unter den angegebenen Creative-Commons-Lizenzen. Die Bilder wurden verkleinert und zugeschnitten.</span>
+       <span lang="en">All photos come from Wikimedia Commons and are licensed under the Creative Commons licences shown. The images were resized and cropped.</span></p>
+    <ul><li>„Zürich view Quaibrücke 20200702“ · Daniel Kraft · <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de" rel="noopener">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Zürich_view_Quaibrücke_20200702.jpg" rel="noopener">Wikimedia Commons</a></li><li>„Zürich - Zoo - Masoala Halle IMG 5821“ · Roland zh · <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de" rel="noopener">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Zürich_-_Zoo_-_Masoala_Halle_IMG_5821.JPG" rel="noopener">Wikimedia Commons</a></li><li>„Zürich Panorama vom Uetliberg“ · Heni2000 · <a href="https://creativecommons.org/licenses/by-sa/3.0/deed.de" rel="noopener">CC BY-SA 3.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Zürich_Panorama_vom_Uetliberg.jpg" rel="noopener">Wikimedia Commons</a></li><li>„Zürich Flussbad Oberer Letten“ · Paebi · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Zürich_Flussbad_Oberer_Letten.jpg" rel="noopener">Wikimedia Commons</a></li><li>„FREITAG SHOP ZÜRICH (3755596568)“ · Daniel Lobo · <a href="https://creativecommons.org/licenses/by/2.0/deed.de" rel="noopener">CC BY 2.0</a> · <a href="https://commons.wikimedia.org/wiki/File:FREITAG_SHOP_ZÜRICH_(3755596568).jpg" rel="noopener">Wikimedia Commons</a></li><li>„Kunsthaus Zürich by ArmAg“ · Armineaghayan · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Kunsthaus_Zürich_by_ArmAg.jpg" rel="noopener">Wikimedia Commons</a></li><li>„Lindenhof Hill, Zurich, 20250330 1227 7917“ · Jakub Hałun · <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="noopener">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Lindenhof_Hill,_Zurich,_20250330_1227_7917.jpg" rel="noopener">Wikimedia Commons</a></li><li>„Landesmuseum Zürich, 2017“ · Burkhard Mücke · <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.de" rel="noopener">CC BY-SA 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Landesmuseum_Zürich,_2017.jpg" rel="noopener">Wikimedia Commons</a></li><li>„Botanischer Garten Zürich 2025 A 04“ · Arkelin · <a href="https://creativecommons.org/licenses/by/4.0/deed.de" rel="noopener">CC BY 4.0</a> · <a href="https://commons.wikimedia.org/wiki/File:Botanischer_Garten_Zürich_2025_A_04.jpg" rel="noopener">Wikimedia Commons</a></li></ul>
+  </section>
+
+  <section id="impressum" class="legal">
+    <h2>Impressum</h2>
+    <p><span lang="de">Schulprojekt, kein geschäftliches Angebot. Verantwortlich für den Inhalt:</span><span lang="en">School project, not a commercial offer. Responsible for the content:</span></p>
+    <p><mark>[Vor- und Nachname / first and last name]</mark><br><mark>[Straße und Hausnummer / street]</mark><br><mark>[PLZ Ort / postcode and city]</mark></p>
+    <p><span lang="de">Kontakt:</span><span lang="en">Contact:</span> <mark>[E-Mail]</mark></p>
+    <p><span lang="de">Die gelb markierten Angaben müssen vor der Veröffentlichung ausgefüllt werden, zusammen mit der Lehrkraft und den Eltern.</span>
+       <span lang="en">The highlighted details must be filled in before publishing, together with the teacher and parents.</span></p>
+  </section>
+
+  <section id="datenschutz" class="legal">
+    <h2><span lang="de">Datenschutzerklärung</span><span lang="en">Privacy policy</span></h2>
+    <div lang="de">
+      <h3>Verantwortlicher</h3><p>Siehe Impressum.</p>
+      <h3>Hosting</h3><p>Diese Seite wird über GitHub Pages bereitgestellt (GitHub Inc., USA, ein Unternehmen von Microsoft). Beim Aufruf verarbeitet der Anbieter technisch notwendige Daten, etwa deine IP-Adresse, Datum, Uhrzeit und die aufgerufene Datei, in Server-Logdateien. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (sicherer und stabiler Betrieb der Seite). Dabei kann eine Übermittlung in die USA stattfinden.</p>
+      <h3>Cookies und Tracking</h3><p>Diese Seite setzt keine Cookies, nutzt keine Analyse- oder Werbedienste und lädt keine Schriften, Bilder oder Skripte von fremden Servern. Alle Bilder liegen auf demselben Server wie die Seite. Die Links zu Wikimedia Commons und Creative Commons werden erst geöffnet, wenn du sie anklickst.</p>
+      <h3>Spracheinstellung</h3><p>Deine Wahl zwischen Deutsch und Englisch wird nur in deinem Browser (localStorage) gespeichert, damit sie beim nächsten Besuch erhalten bleibt. Sie wird nicht an uns übertragen.</p>
+      <h3>Deine Rechte</h3><p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Widerspruch sowie das Recht, dich bei einer Datenschutzaufsichtsbehörde zu beschweren.</p>
     </div>
-  </header>
-
-  <main>
-    <section id="familien">
-      <h2>Familien mit Kindern</h2>
-      <p>Orte, an denen Kinder Tiere, Natur und Schiffe erleben und Eltern entspannt mitgehen können.</p>
-      <ul class="grid">
-        <li class="ort">
-          <h3>Zoo Zürich</h3>
-          <p>Viele Tiere aus aller Welt. In der Masoala-Regenhalle läuft man durch einen echten Regenwald.</p>
-          <p class="wo">Am Zürichberg, mit dem Tram erreichbar.</p>
-        </li>
-        <li class="ort">
-          <h3>Schifffahrt auf dem Zürichsee</h3>
-          <p>Eine Rundfahrt auf dem See zeigt die Stadt und die Berge vom Wasser aus. Das ist für Kinder ein Erlebnis.</p>
-          <p class="wo">Abfahrt am Bürkliplatz.</p>
-        </li>
-        <li class="ort">
-          <h3>Uetliberg und Planetenweg</h3>
-          <p>Ein Spaziergang auf dem Hausberg. Auf dem Planetenweg lernen Kinder die Größe unseres Sonnensystems kennen.</p>
-          <p class="wo">Mit der S-Bahn bis Uetliberg.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section id="jugendliche">
-      <h2>Jugendliche</h2>
-      <p>Orte zum Ausprobieren, Treffen und Abhängen mit Freunden.</p>
-      <ul class="grid">
-        <li class="ort">
-          <h3>FIFA World Football Museum</h3>
-          <p>Ein Museum rund um Fußball mit Pokalen, Trikots und Mitmach-Stationen.</p>
-          <p class="wo">Im Stadtteil Enge, nahe dem Bahnhof Enge.</p>
-        </li>
-        <li class="ort">
-          <h3>Flussbad Oberer Letten</h3>
-          <p>Im Sommer baden und chillen direkt an der Limmat, mitten in der Stadt.</p>
-          <p class="wo">Beim Platzspitz, nahe dem Hauptbahnhof.</p>
-        </li>
-        <li class="ort">
-          <h3>Freitag Flagship Store</h3>
-          <p>Ein Turm aus gestapelten Frachtcontainern, in dem Taschen aus gebrauchten Planen verkauft werden. Ein ungewöhnlicher Ort zum Anschauen.</p>
-          <p class="wo">In Zürich West.</p>
-        </li>
-      </ul>
-    </section>
-
-    <section id="erwachsene">
-      <h2>Erwachsene und Senioren</h2>
-      <p>Kultur, Geschichte und ruhige Wege, auch für alle, die lieber ohne lange Strecken unterwegs sind.</p>
-      <ul class="grid">
-        <li class="ort">
-          <h3>Grossmünster</h3>
-          <p>Das Wahrzeichen der Altstadt. Von den Türmen aus siehst du über die Dächer der Stadt.</p>
-          <p class="wo">Am Limmatufer in der Altstadt.</p>
-        </li>
-        <li class="ort">
-          <h3>Fraumünster</h3>
-          <p>Die Kirche ist bekannt für ihre farbigen Kirchenfenster von Marc Chagall.</p>
-          <p class="wo">In der Altstadt, am Münsterhof.</p>
-        </li>
-        <li class="ort">
-          <h3>Kunsthaus Zürich</h3>
-          <p>Eines der großen Kunstmuseen der Schweiz mit Werken vom Mittelalter bis zur Gegenwart.</p>
-          <p class="wo">Am Heimplatz.</p>
-        </li>
-        <li class="ort">
-          <h3>Lindenhof</h3>
-          <p>Ein ruhiger Platz mit Bänken und Aussicht auf die Limmat und die Altstadt.</p>
-          <p class="wo">Oberhalb der Altstadt.</p>
-        </li>
-        <li class="ort">
-          <h3>Seepromenade</h3>
-          <p>Ein flacher Spazierweg am Zürichsee mit Bänken, Wiesen und viel Platz zum Ausruhen.</p>
-          <p class="wo">Zwischen Bürkliplatz und Zürichhorn.</p>
-        </li>
-      </ul>
-    </section>
-
-    <p class="hinweis">Tipp: Öffnungszeiten und Preise ändern sich. Schau vor dem Besuch auf der Website des Ortes nach.</p>
-  </main>
-
-  <footer>Schulprojekt „Zürich entdecken mit HTML und KI“ · Etappe 1 · erste Version</footer>
+    <div lang="en">
+      <h3>Controller</h3><p>See the legal notice (Impressum).</p>
+      <h3>Hosting</h3><p>This site is provided through GitHub Pages (GitHub Inc., USA, a Microsoft company). When you open the page, the provider processes technically necessary data such as your IP address, date, time and the requested file in server log files. The legal basis is Art. 6(1)(f) GDPR (secure and stable operation of the site). Data may be transferred to the USA.</p>
+      <h3>Cookies and tracking</h3><p>This site sets no cookies, uses no analytics or advertising services and loads no fonts, images or scripts from third-party servers. All images are stored on the same server as the page. Links to Wikimedia Commons and Creative Commons only open when you click them.</p>
+      <h3>Language setting</h3><p>Your choice between German and English is stored only in your browser (localStorage) so it is kept for your next visit. It is not sent to us.</p>
+      <h3>Your rights</h3><p>You have the right of access, rectification, erasure, restriction of processing and objection, and the right to lodge a complaint with a data protection supervisory authority.</p>
+    </div>
+  </section>
+</main>
+<footer>
+  <p><span lang="de">Schulprojekt „Zürich entdecken mit HTML und KI“ · Etappe 1 · erste Version</span><span lang="en">School project “Discover Zürich with HTML and AI” · Stage 1 · first version</span></p>
+  <p><a href="#bildnachweis"><span lang="de">Bildnachweis</span><span lang="en">Image credits</span></a><a href="#impressum">Impressum</a><a href="#datenschutz"><span lang="de">Datenschutz</span><span lang="en">Privacy</span></a></p>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement,btns=document.querySelectorAll('.langs button');
+  var T={de:"Zürich entdecken",en:"Discover Zürich"};
+  function set(l){
+    root.setAttribute('data-lang',l);root.setAttribute('lang',l);document.title=T[l];
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false')});
+    document.querySelectorAll('img[data-alt-de]').forEach(function(i){i.alt=i.getAttribute('data-alt-'+l)});
+    try{localStorage.setItem('lang',l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.set)})});
+  var s=null;try{s=localStorage.getItem('lang')}catch(e){}
+  if(s==='en'||s==='de')set(s);
+})();
+</script>
 </body>
 </html>
